@@ -4,7 +4,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const LandingPage = () => {
   return (
-    <Box maxWidth={"xl"} bgcolor="seagreen">
+    <Box maxWidth={"xl"}  bgcolor="seagreen" sx={{marginInline: 0}}>
         <Container   >
             <Stack direction={{xs:"column"}}  textAlign="center">
                <Box>    
