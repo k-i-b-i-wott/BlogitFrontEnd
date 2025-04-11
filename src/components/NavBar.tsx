@@ -31,7 +31,7 @@ const NavBar = () => {
                <Subject /> 
             </IconButton>
             <Typography variant="h6" component="div" sx={{flexGrow:1}}>
-                Blogit
+                BlogIt
             </Typography>
             {
                 isMobile?(<>

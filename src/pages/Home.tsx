@@ -1,10 +1,13 @@
-import React from 'react'
+import { Box, Container, Typography } from '@mui/material'
+
+import LandingPage from '../components/LandingPage'
+
 
 const Home = () => {
   return (
-    <div>
-      
-    </div>
+  <Box sx={{mt:12}}>
+    <LandingPage />
+  </Box>
   )
 }
 
