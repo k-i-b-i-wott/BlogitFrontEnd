@@ -1,6 +1,7 @@
 import { Box, Button, Grid, Stack, Typography } from '@mui/material'
 import EastIcon from '@mui/icons-material/East';
 import Cover from "../assets/images/blog-examples-1.jpg"
+import { Link } from 'react-router-dom';
 
 
 const LandingPage = () => {
@@ -19,12 +20,12 @@ const LandingPage = () => {
             </Box>
            <Grid container justifyContent={"flex-start"} gap={2} mt={3}>
             <Grid>
-                <Button variant='contained' endIcon={<EastIcon />}>
+                <Button variant='contained' endIcon={<EastIcon />} component={Link} to="/register">
                     Start Writing
                 </Button>
             </Grid>
             <Grid>
-                <Button variant='outlined'>
+                <Button variant='outlined' component={Link} to="/register">
                 Explore
                 </Button>
             </Grid>

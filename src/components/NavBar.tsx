@@ -1,5 +1,5 @@
 import { AppBar,Toolbar, Button, Typography, IconButton, Stack,useMediaQuery,useTheme, Menu,MenuItem  } from "@mui/material"
-import{Subject} from '@mui/icons-material';
+import{Label, Subject} from '@mui/icons-material';
 import { useState , MouseEvent  } from 'react'
 import { Link } from "react-router-dom";
 
@@ -21,7 +21,8 @@ const NavBar = () => {
     const navElements= [
         {label:"Home" , path:"/"},
         {label:"Signup" , path:"/register"},
-        {label:"SignIn" , path:"/login"}
+        {label:"SignIn" , path:"/login"},
+        {label:"Blogs" , path:"/blogs"},
     ] 
 
   return (
