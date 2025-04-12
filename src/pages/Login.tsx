@@ -24,7 +24,7 @@ const {isPending,mutate}=useMutation({
     console.log(response.data)    
   },
   onSuccess:()=>{
-    navigate('/')
+    navigate('/blogs')
   },
   onError:(error)=>{
     if(axios.isAxiosError(error)){

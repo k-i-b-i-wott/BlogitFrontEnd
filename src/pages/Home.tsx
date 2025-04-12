@@ -1,7 +1,7 @@
 import { Box, Button, Container, Stack, Typography } from '@mui/material'
 import {Link} from 'react-router-dom'
 import LandingPage from '../components/LandingPage'
-import './styles/landingpage.css'
+
 import MoreInfo from '../components/MoreInfo'
 import WhyBlogit from '../components/WhyBlogit'
 

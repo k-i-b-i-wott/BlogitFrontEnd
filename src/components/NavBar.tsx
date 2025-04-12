@@ -23,6 +23,7 @@ const NavBar = () => {
         {label:"Signup" , path:"/register"},
         {label:"SignIn" , path:"/login"},
         {label:"Blogs" , path:"/blogs"},
+        {label: "Write Blogs", path:"/writeblogs"}
     ] 
 
   return (
