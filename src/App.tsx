@@ -6,6 +6,7 @@ import SignUp from "./pages/SignUp"
 import Login from "./pages/Login"
 import Blogs from "./pages/Blogs"
 import WriteBlog from "./pages/WriteBlog"
+import BlogEntry from "./pages/BlogEntry"
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
     <Route path="/login" element={<Login />}/>
     <Route path="/blogs" element={<Blogs />}/>
     <Route path="/writeblogs" element={<WriteBlog />}/>
+    <Route path="/blog/:blogId" element={<BlogEntry />}/>
     </Routes>
     </Container>
    
