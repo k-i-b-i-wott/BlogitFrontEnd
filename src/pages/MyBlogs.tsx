@@ -1,14 +1,17 @@
 import { Box, Button, Card, CardActions, CardContent, Grid, IconButton, Typography } from '@mui/material'
 import { GoArrowUpRight } from "react-icons/go";
 
-import {useQuery} from "@tanstack/react-query"
+import {useQuery, useMutation, useQueryClient} from "@tanstack/react-query"
 import axios from 'axios'
 import {format} from 'date-fns'
+import { useParams } from 'react-router-dom';
 
 import{ Link} from 'react-router-dom'
+import { use } from 'react';
 const MyBlogs = () => {
 
-  
+  const {blogId}= useParams()
+  const queryClient = useQueryClient()
 
 const {isLoading,data,isError,error} =useQuery({
     queryKey:["myBlogs"],
@@ -41,6 +44,24 @@ if(data && data.length === 0){
   return <Typography variant='h1' sx={{mt:12}}>
           No blog found  <Button variant='contained' component={Link} to="/writeblogs"> Create One</Button>
   </Typography>
+}
+
+const {isPending, mutate}=useMutation({
+  mutationKey:["delete-blog"],
+  mutationFn:async (blogId: String)=>{
+     await axios.delete(`http://localhost:3000/blog/post/${blogId}`,{withCredentials:true})
+  },
+  onSuccess:()=>{
+    console.log("Blog deleted successfully");
+    queryClient.invalidateQueries({queryKey:['myBlogs']})
+  },
+  onError:(error)=>{console.log(error)}
+
+})
+
+const handleDelete=(blogId: String, e: React.MouseEvent <HTMLButtonElement>)=>{
+  e.preventDefault()
+  mutate(blogId)
 }
 
 return (
@@ -86,8 +107,10 @@ return (
               <Button variant='contained' sx={{bgcolor:"primary.main"}} component={Link} to={`/updateblog/${blog.blogId}`}>
                 Update
               </Button>
-              <Button variant='contained' sx={{bgcolor:"error.main"}}>
-                Delete
+              <Button variant='contained' sx={{bgcolor:"error.main"}} onClick={(e)=>handleDelete(blog.blogId,e)} disabled={isPending}>
+                {
+                  isPending ? "Deleting..." : "Delete"
+                }
               </Button>
               
             </CardActions>

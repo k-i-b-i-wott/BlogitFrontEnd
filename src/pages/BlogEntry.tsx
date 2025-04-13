@@ -16,7 +16,7 @@ const BlogEntry = () => {
   
 
     const {isLoading,data, isError,error}= useQuery({
-      queryKey:['Fetching-entry'],
+      queryKey:['Fetching-blog'],
       queryFn:async()=>{
         const response = await axios.get(`http://localhost:3000/blog/post/${blogId}`,
           {withCredentials:true}
