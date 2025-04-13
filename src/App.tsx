@@ -7,6 +7,7 @@ import Login from "./pages/Login"
 import Blogs from "./pages/Blogs"
 import WriteBlog from "./pages/WriteBlog"
 import BlogEntry from "./pages/BlogEntry"
+import MyBlogs from "./pages/MyBlogs"
 
 
 const App = () => {
@@ -14,12 +15,13 @@ const App = () => {
     <Container>
       <NavBar />
     <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/register" element={<SignUp />}/>
-    <Route path="/login" element={<Login />}/>
-    <Route path="/blogs" element={<Blogs />}/>
-    <Route path="/writeblogs" element={<WriteBlog />}/>
-    <Route path="/blog/:blogId" element={<BlogEntry />}/>
+    <Route path="/"   element={<Home />} />
+    <Route path="/register"   element={<SignUp />}/>
+    <Route path="/login"  element={<Login />}/>
+    <Route path="/blogs"  element={<Blogs />}/>
+    <Route path="/writeblogs"   element={<WriteBlog />}/>
+    <Route path="/blog/:blogId"   element={<BlogEntry />}/>
+    <Route path="/myblogs"  element={<MyBlogs />}/>
     </Routes>
     </Container>
    

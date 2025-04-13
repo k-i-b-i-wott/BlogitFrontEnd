@@ -96,7 +96,7 @@ const WriteBlog = () => {
                 onChange={(e)=>setBlogExcerpt(e.target.value)}
                 sx={{mb:2}}
                 />
-            <TextField  label= "Enter the Blog's content here ...." 
+            <TextField  label= "Enter the Blog's content here .... Markdown supported" 
             fullWidth variant='outlined' 
             type='text' 
             minRows={8} 

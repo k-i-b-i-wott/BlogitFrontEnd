@@ -1,7 +1,7 @@
 import { Box, CircularProgress, Typography } from '@mui/material'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
-import { useState } from 'react'
+import ReactMarkdown from 'react-markdown'
 import {  useParams } from 'react-router-dom'
 
 const BlogEntry = () => {
@@ -28,10 +28,12 @@ const BlogEntry = () => {
 
   
 return (
-   <Box sx={{mt:12}}>
-     <Typography variant='h2' component='h2'>{data &&data.blogTitle}</Typography>
+   <Box sx={{alignContent:"center"}}>
+      <Box sx={{mt:12, textAlign:"left", maxWidth:"md"}}>
+     <Typography variant='h4' gutterBottom>{data &&data.blogTitle}</Typography>
      <Typography variant='subtitle1' component='h6'>{data &&data.blogExcerpt}</Typography>
-     <Typography variant='body2' component='p'>{data &&data.blogBody}</Typography>
+     <ReactMarkdown >{data &&data.blogBody}</ReactMarkdown>
+   </Box>
    </Box>
   )
 }
