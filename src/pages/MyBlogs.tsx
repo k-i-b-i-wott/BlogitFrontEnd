@@ -23,6 +23,7 @@ const {isLoading,data,isError,error} =useQuery({
       Loading ..... please wait
     </Typography>
   }
+
   if(isError){
     if(axios.isAxiosError(error)){
       const errorData = error.response?.data.message
@@ -31,19 +32,24 @@ const {isLoading,data,isError,error} =useQuery({
       </Typography>
     }else{
       return <Typography variant='h1' sx={{mt:12}}>
-        An error occured
+        An error occurred
       </Typography>
     }
   }
    
-
+if(data && data.length === 0){
+  return <Typography variant='h1' sx={{mt:12}}>
+          No blog found  <Button variant='contained' component={Link} to="/writeblogs"> Create One</Button>
+  </Typography>
+}
 
 return (
     <Box sx={{mt:12, display:"flex", gap:3, justifyContent:"center", flexDirection:"column"}}>
+     
         {
          data && data.map((blog:any)=>{
             return(
-        <Card key={blog.blogId} sx={{maxWidth:"md", height:"fit-content",  mt:.5}}>
+        <Card  key={blog.blogId} sx={{maxWidth:"md", height:"fit-content", justifyContent:"center", mb:2}}>
           <CardContent sx={{display:"flex", flexDirection:"column",gap:2}}>
             <Grid container sx={{display:"flex", flexDirection:"column", gap:1}}>
               <Grid sx={{justifyContent:"center", display:"flex", flexDirection:"column", alignItems:"center"}}>
@@ -77,7 +83,7 @@ return (
                <Button component={Link} to={`/blog/${blog.blogId}`} endIcon={<GoArrowUpRight /> }  sx={{color:"primary.main"}}>
                   More
                 </Button>
-              <Button variant='contained' sx={{bgcolor:"primary.main"}}>
+              <Button variant='contained' sx={{bgcolor:"primary.main"}} component={Link} to={`/updateblog/${blog.blogId}`}>
                 Update
               </Button>
               <Button variant='contained' sx={{bgcolor:"error.main"}}>
@@ -91,6 +97,7 @@ return (
             )
           })
         }
+     
     </Box>
   )
 }

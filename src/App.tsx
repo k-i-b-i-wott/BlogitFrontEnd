@@ -8,6 +8,7 @@ import Blogs from "./pages/Blogs"
 import WriteBlog from "./pages/WriteBlog"
 import BlogEntry from "./pages/BlogEntry"
 import MyBlogs from "./pages/MyBlogs"
+import UpdateBlog from "./pages/UpdateBlog"
 
 
 const App = () => {
@@ -22,6 +23,8 @@ const App = () => {
     <Route path="/writeblogs"   element={<WriteBlog />}/>
     <Route path="/blog/:blogId"   element={<BlogEntry />}/>
     <Route path="/myblogs"  element={<MyBlogs />}/>
+    <Route path="/updateblog/:blogId" element={<UpdateBlog />}/>
+
     </Routes>
     </Container>
    
