@@ -6,6 +6,7 @@ import axios from 'axios'
 import {format} from 'date-fns'
 
 
+
 import{ Link} from 'react-router-dom'
 
 const MyBlogs = () => {
@@ -49,7 +50,7 @@ if(data && data.length === 0){
 const {isPending, mutate}=useMutation({
   mutationKey:["delete-blog"],
   mutationFn:async (blogId: String)=>{
-     await axios.delete(`http://localhost:3000/blog/post/${blogId}`,{withCredentials:true})
+     await axios.delete(`https://blogitbackend2.onrender.com/blog/post/${blogId}`,{withCredentials:true})
   },
   onSuccess:()=>{
     console.log("Blog deleted successfully");
