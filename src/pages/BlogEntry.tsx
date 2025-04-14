@@ -18,7 +18,7 @@ const BlogEntry = () => {
     const {isLoading,data, isError,error}= useQuery({
       queryKey:['Fetching-blog'],
       queryFn:async()=>{
-        const response = await axios.get(`http://localhost:3000/blog/post/${blogId}`,
+        const response = await axios.get(`https://blogitbackend2.onrender.com/blog/post/${blogId}`,
           {withCredentials:true}
         ) 
         console.log(response.data)

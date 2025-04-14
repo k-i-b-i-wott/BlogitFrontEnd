@@ -16,7 +16,7 @@ const MyBlogs = () => {
 const {isLoading,data,isError,error} =useQuery({
     queryKey:["myBlogs"],
     queryFn: async () => {
-      const response = await axios.get(`http://localhost:3000/blog/post`,{withCredentials:true})
+      const response = await axios.get(`https://blogitbackend2.onrender.com/blog/post`,{withCredentials:true})
       console.log(response.data)
       return response.data.data
     }

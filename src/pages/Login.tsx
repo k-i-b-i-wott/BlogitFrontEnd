@@ -19,7 +19,7 @@ const Login = () => {
 const {isPending,mutate}=useMutation({
   mutationKey:["user-login"],
   mutationFn: async ()=>{
-    const response= await axios.post(`http://localhost:3000/auth/login`,{
+    const response= await axios.post(`https://blogitbackend2.onrender.com/auth/login`,{
       identifier,
       password
     }, {withCredentials:true})

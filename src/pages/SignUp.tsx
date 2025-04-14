@@ -18,7 +18,7 @@ const SignUp = () => {
  const {isPending, mutate}= useMutation({
     mutationKey:["user-register"],
     mutationFn: async()=>{
-      const response = await axios.post(`http://localhost:3000/auth/register`, {
+      const response = await axios.post(`https://blogitbackend2.onrender.com/auth/register`, {
         firstName,
         lastName,
         emailAddress,

@@ -14,7 +14,7 @@ const WriteBlog = () => {
  const {isPending,mutate}= useMutation({
     mutationKey:["Create-Blog"],
     mutationFn: async ()=>{
-     const response= await axios.post(`http://localhost:3000/blog/post`,{
+     const response= await axios.post(`https://blogitbackend2.onrender.com/blog/post`,{
         blogTitle,
         blogExcerpt,
         blogBody
