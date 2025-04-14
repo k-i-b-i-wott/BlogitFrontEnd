@@ -1,4 +1,4 @@
-import { Box, Button, Container, Stack, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import {Link} from 'react-router-dom'
 import LandingPage from '../components/LandingPage'
 

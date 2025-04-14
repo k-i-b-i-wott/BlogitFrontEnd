@@ -1,4 +1,4 @@
-import { Avatar, Box, Card,CardActions,CardContent, Container, Grid, IconButton, Typography } from '@mui/material'
+import { Avatar,Card,CardActions,CardContent, Container, Grid, IconButton, Typography } from '@mui/material'
 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { MdOutlineStarBorderPurple500 } from "react-icons/md";

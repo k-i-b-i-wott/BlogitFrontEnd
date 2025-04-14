@@ -1,5 +1,5 @@
-import { Container, Icon, Paper,Box, Typography, Avatar } from '@mui/material'
-import React from 'react'
+import { Container, Paper,Box, Typography, Avatar } from '@mui/material'
+
 import { FiFeather } from "react-icons/fi";
 import { IoIosPeople } from "react-icons/io";
 import { FaBookOpen } from "react-icons/fa";

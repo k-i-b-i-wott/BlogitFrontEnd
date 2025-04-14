@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 
 interface Props {
-    children: JSX.Element
+    children: React.ReactNode
 }
 const Protected = ({children}: Props) => {
   
@@ -13,13 +13,16 @@ const Protected = ({children}: Props) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-       
+        const timer= setTimeout(() => {
             if (!user) {
                 navigate("/login");
-            }       
+            }
+        },100);
+
+        return () => clearTimeout(timer);
     }, [user, navigate]);
 
-    return user? <>{children}</>:null
+    return <div>{children}</div>
     
   
 }
