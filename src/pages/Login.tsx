@@ -1,9 +1,10 @@
-import { Paper ,Container, Box, Grid,Typography, IconButton,Avatar,Alert, TextField, FormControlLabel, Checkbox, Button} from "@mui/material"
+import { Paper ,Container, Box, Grid,Typography,Avatar,Alert, TextField, FormControlLabel, Checkbox, Button} from "@mui/material"
 import {Link, useNavigate} from "react-router-dom"
 import { HiLockClosed } from "react-icons/hi2";
 import {useState} from 'react'
 import { useMutation } from "@tanstack/react-query";
 import axios from 'axios';
+import  useUserStore  from "../Store/userStore";
 
 
 
@@ -13,6 +14,7 @@ const Login = () => {
   const [password, setPassword]=useState("")
   const [error, setError]=useState("")
   const navigate = useNavigate()
+  const setUserInformation = useUserStore((state) => state.setUserInformation);
 
 const {isPending,mutate}=useMutation({
   mutationKey:["user-login"],
@@ -22,8 +24,10 @@ const {isPending,mutate}=useMutation({
       password
     }, {withCredentials:true})
     console.log(response.data)    
+    return response.data.data;
   },
-  onSuccess:()=>{
+  onSuccess:(data)=>{
+    setUserInformation(data)    
     navigate('/blogs')
   },
   onError:(error)=>{

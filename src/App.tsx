@@ -9,7 +9,7 @@ import WriteBlog from "./pages/WriteBlog"
 import BlogEntry from "./pages/BlogEntry"
 import MyBlogs from "./pages/MyBlogs"
 import UpdateBlog from "./pages/UpdateBlog"
-
+import Protected from "./components/Protected"
 
 const App = () => {
   return (
@@ -19,10 +19,11 @@ const App = () => {
     <Route path="/"   element={<Home />} />
     <Route path="/register"   element={<SignUp />}/>
     <Route path="/login"  element={<Login />}/>
-    <Route path="/blogs"  element={<Blogs />}/>
-    <Route path="/writeblogs"   element={<WriteBlog />}/>
-    <Route path="/blog/:blogId"   element={<BlogEntry />}/>
-    <Route path="/myblogs"  element={<MyBlogs />}/>
+    <Route path="/blogs"  element= {<Protected><Blogs /></Protected>}/>
+     
+    <Route path="/writeblogs"   element={<Protected><WriteBlog /></Protected>}/>
+    <Route path="/blog/:blogId"   element={<Protected><BlogEntry /></Protected>}/>
+    <Route path="/myblogs"  element={<Protected><MyBlogs /></Protected>}/>
     <Route path="/updateblog/:blogId" element={<UpdateBlog />}/>
 
     </Routes>

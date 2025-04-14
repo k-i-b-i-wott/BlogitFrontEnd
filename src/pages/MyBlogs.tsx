@@ -1,16 +1,16 @@
-import { Box, Button, Card, CardActions, CardContent, Grid, IconButton, Typography } from '@mui/material'
+import { Box, Button, Card, CardActions, CardContent, Grid,  Typography } from '@mui/material'
 import { GoArrowUpRight } from "react-icons/go";
 
 import {useQuery, useMutation, useQueryClient} from "@tanstack/react-query"
 import axios from 'axios'
 import {format} from 'date-fns'
-import { useParams } from 'react-router-dom';
+
 
 import{ Link} from 'react-router-dom'
-import { use } from 'react';
+
 const MyBlogs = () => {
 
-  const {blogId}= useParams()
+  
   const queryClient = useQueryClient()
 
 const {isLoading,data,isError,error} =useQuery({

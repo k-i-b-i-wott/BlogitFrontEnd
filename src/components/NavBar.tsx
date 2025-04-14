@@ -1,14 +1,19 @@
 import { AppBar,Toolbar, Button, Typography, IconButton, Stack,useMediaQuery,useTheme, Menu,MenuItem  } from "@mui/material"
-import{Label, Subject} from '@mui/icons-material';
+import{ Subject} from '@mui/icons-material';
 import { useState , MouseEvent  } from 'react'
 import { Link } from "react-router-dom";
 
 import { IoMdMenu } from "react-icons/io";
+import useUserStore from "../Store/userStore";
 
 const NavBar = () => {
     const theme= useTheme()
     const isMobile= useMediaQuery(theme.breakpoints.down('sm'))
     const [anchorElement, setAnchorEl]= useState<null |HTMLElement>(null);
+
+    const user= useUserStore((state) => state.user);
+    const removeUserInformation= useUserStore((state) => state.setRemoveInformation);
+
 
     const handleOnClose = (): void=>{
         setAnchorEl(null);
@@ -18,14 +23,23 @@ const NavBar = () => {
       }
     
 
-    const navElements= [
+    const navElements= user ? [
+       
         {label:"Home" , path:"/"},
-        {label:"Signup" , path:"/register"},
-        {label:"SignIn" , path:"/login"},
         {label:"Blogs" , path:"/blogs"},
         {label: "Write ", path:"/writeblogs"},
         {label: "MyBlogs", path:"/myblogs"}
-    ] 
+    ] :
+    [
+        {label:"Home" , path:"/"},
+        {label:"Signup" , path:"/register"},
+        {label:"SignIn" , path:"/login"},
+    ]
+
+    // if(user){
+    //     navElements.push({label:"Logout" , path:"/logout"});
+    // }
+
 
   return (
    <AppBar   sx={{b:3}} >
@@ -51,6 +65,12 @@ const NavBar = () => {
                         navElements.map((item)=>(
                             <MenuItem key={item.label} component={Link} to={item.path}>{item.label}</MenuItem>
                         ))
+
+                    }
+                    {
+                        user && (
+                            <MenuItem onClick={removeUserInformation}>Logout</MenuItem>
+                        )
                     }
                 </Menu>                
                 </>
@@ -60,6 +80,11 @@ const NavBar = () => {
                        navElements.map((item)=>(
                            <Button key={item.label} component={Link} to={item.path} color="inherit">{item.label}</Button>
                        ))
+                     }
+                     {
+                        user && (
+                            <Button onClick={removeUserInformation} color="inherit">Logout</Button>
+                        )
                      }
                    </Stack>
                 )        }
