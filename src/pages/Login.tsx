@@ -5,7 +5,7 @@ import {useState} from 'react'
 import { useMutation } from "@tanstack/react-query";
 import axios from 'axios';
 import  useUserStore  from "../Store/userStore";
-
+import apiUrl  from '../utils/apiUrl'
 
 
 
@@ -19,7 +19,7 @@ const Login = () => {
 const {isPending,mutate}=useMutation({
   mutationKey:["user-login"],
   mutationFn: async ()=>{
-    const response= await axios.post(`https://blogitbackend2.onrender.com/auth/login`,{
+    const response= await axios.post(`${apiUrl}/auth/login`,{
       identifier,
       password
     }, {withCredentials:true})

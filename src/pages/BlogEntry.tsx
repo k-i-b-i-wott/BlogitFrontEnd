@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import {  useParams } from 'react-router-dom'
 import{useEffect, useState} from 'react'
 
+import apiUrl  from '../utils/apiUrl'
 import { Link } from 'react-router-dom'
 
 
@@ -18,7 +19,7 @@ const BlogEntry = () => {
     const {isLoading,data, isError,error}= useQuery({
       queryKey:['Fetching-blog'],
       queryFn:async()=>{
-        const response = await axios.get(`https://blogitbackend2.onrender.com/blog/post/${blogId}`,
+        const response = await axios.get(`${apiUrl}/blog/post/${blogId}`,
           {withCredentials:true}
         ) 
         console.log(response.data)

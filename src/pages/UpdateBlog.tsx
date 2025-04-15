@@ -4,7 +4,7 @@ import { useQuery, useMutation } from "@tanstack/react-query"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
-
+import apiUrl  from '../utils/apiUrl'
 
 
 
@@ -22,7 +22,7 @@ const UpdateBlog = () => {
 const {isLoading,data}=useQuery({
     queryKey:["Fetching-blog"],
     queryFn:async()=>{
-        const response = await axios.get(`https://blogitbackend2.onrender.com/blog/post/${blogId}`,{withCredentials:true})
+        const response = await axios.get(`${apiUrl}/blog/post/${blogId}`,{withCredentials:true})
 
         console.log(response.data)
         return response.data.data
@@ -40,7 +40,7 @@ useEffect(()=>{
 
 const {isPending,mutate}=useMutation({
     mutationFn: async()=>{
-        const response = await axios.patch(`https://blogitbackend2.onrender.com/blog/post/${blogId}`,{
+        const response = await axios.patch(`${apiUrl}/blog/post/${blogId}`,{
             blogTitle:title,
             blogExcerpt:excerpt,
             blogBody:content
@@ -54,7 +54,7 @@ const {isPending,mutate}=useMutation({
             const errorData = error.response?.data.message
             setError(errorData)
         }else{
-            setError("An error occured")
+            setError("An error occurred")
         }
     }
    }

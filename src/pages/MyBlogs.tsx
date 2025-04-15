@@ -1,5 +1,6 @@
 import { Box, Button, Card, CardActions, CardContent, Grid,  Typography } from '@mui/material'
 import { GoArrowUpRight } from "react-icons/go";
+import apiUrl  from '../utils/apiUrl'
 
 import {useQuery, useMutation, useQueryClient} from "@tanstack/react-query"
 import axios from 'axios'
@@ -17,7 +18,7 @@ const MyBlogs = () => {
 const {isLoading,data,isError,error} =useQuery({
     queryKey:["myBlogs"],
     queryFn: async () => {
-      const response = await axios.get(`https://blogitbackend2.onrender.com/blog/post`,{withCredentials:true})
+      const response = await axios.get(`${apiUrl}/blog/post`,{withCredentials:true})
       console.log(response.data)
       return response.data.data
     }
@@ -50,7 +51,7 @@ if(data && data.length === 0){
 const {isPending, mutate}=useMutation({
   mutationKey:["delete-blog"],
   mutationFn:async (blogId: String)=>{
-     await axios.delete(`https://blogitbackend2.onrender.com/blog/post/${blogId}`,{withCredentials:true})
+     await axios.delete(`${apiUrl}/blog/post/${blogId}`,{withCredentials:true})
   },
   onSuccess:()=>{
     console.log("Blog deleted successfully");

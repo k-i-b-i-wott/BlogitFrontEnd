@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import { IoMdMenu } from "react-icons/io";
 import useUserStore from "../Store/userStore";
+import { useParams } from "react-router-dom";
 
 const NavBar = () => {
     const theme= useTheme()
@@ -13,6 +14,7 @@ const NavBar = () => {
 
     const user= useUserStore((state) => state.user);
     const removeUserInformation= useUserStore((state) => state.setRemoveInformation);
+    const {userId}= useParams()
 
 
     const handleOnClose = (): void=>{
@@ -28,12 +30,14 @@ const NavBar = () => {
         {label:"Home" , path:"/"},
         {label:"Blogs" , path:"/blogs"},
         {label: "Write ", path:"/writeblogs"},
-        {label: "MyBlogs", path:"/myblogs"}
+        {label: "MyBlogs", path:"/myblogs"},
+        {label: "My Profile", path:"/profile"}
     ] :
     [
         {label:"Home" , path:"/"},
         {label:"Signup" , path:"/register"},
         {label:"SignIn" , path:"/login"},
+        {label: "My Profile", path:`/profile`}
     ]
 
     // if(user){

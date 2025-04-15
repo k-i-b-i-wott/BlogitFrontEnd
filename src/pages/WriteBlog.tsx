@@ -4,6 +4,8 @@ import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
+import apiUrl  from '../utils/apiUrl'
+
 const WriteBlog = () => {
   const [blogTitle,setBlogTitle] = useState("")
   const [blogExcerpt,setBlogExcerpt] = useState("")
@@ -14,7 +16,7 @@ const WriteBlog = () => {
  const {isPending,mutate}= useMutation({
     mutationKey:["Create-Blog"],
     mutationFn: async ()=>{
-     const response= await axios.post(`https://blogitbackend2.onrender.com/blog/post`,{
+     const response= await axios.post(`${apiUrl}/blog/post`,{
         blogTitle,
         blogExcerpt,
         blogBody

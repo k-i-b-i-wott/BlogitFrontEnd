@@ -4,6 +4,7 @@ import {Link, useNavigate} from "react-router-dom"
 import {useMutation} from "@tanstack/react-query"
 import {useState} from 'react'
 import axios from 'axios'
+import apiUrl  from '../utils/apiUrl'
 
 const SignUp = () => {
   const [firstName, setFirstName] = useState("")
@@ -18,7 +19,7 @@ const SignUp = () => {
  const {isPending, mutate}= useMutation({
     mutationKey:["user-register"],
     mutationFn: async()=>{
-      const response = await axios.post(`https://blogitbackend2.onrender.com/auth/register`, {
+      const response = await axios.post(`${apiUrl}/auth/register`, {
         firstName,
         lastName,
         emailAddress,

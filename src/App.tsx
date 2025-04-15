@@ -10,6 +10,8 @@ import BlogEntry from "./pages/BlogEntry"
 import MyBlogs from "./pages/MyBlogs"
 import UpdateBlog from "./pages/UpdateBlog"
 import Protected from "./components/Protected"
+import MyProfile from "./pages/MyProfile"
+import UpdateProfile from "./components/UpdateProfile"
 
 const App = () => {
   return (
@@ -25,6 +27,8 @@ const App = () => {
     <Route path="/blog/:blogId"   element={<Protected><BlogEntry /></Protected>}/>
     <Route path="/myblogs"  element={<Protected><MyBlogs /></Protected>}/>
     <Route path="/updateblog/:blogId" element={<UpdateBlog />}/>
+    <Route path ="/profile" element={<Protected><MyProfile /></Protected>}/>
+    <Route path="/updateprofile" element={<Protected><UpdateProfile  /></Protected>}/>
 
     </Routes>
     </Container>
