@@ -12,6 +12,7 @@ import UpdateBlog from "./pages/UpdateBlog"
 import Protected from "./components/Protected"
 import MyProfile from "./pages/MyProfile"
 import UpdateProfile from "./components/UpdateProfile"
+import Changepassword from "./components/Changepassword"
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
     <Route path="/updateblog/:blogId" element={<UpdateBlog />}/>
     <Route path ="/profile" element={<Protected><MyProfile /></Protected>}/>
     <Route path="/updateprofile" element={<Protected><UpdateProfile  /></Protected>}/>
+    <Route path="/updatepassword" element={<Protected><Changepassword /></Protected>}/>
 
     </Routes>
     </Container>

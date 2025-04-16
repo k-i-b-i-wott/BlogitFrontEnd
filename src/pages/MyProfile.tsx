@@ -29,8 +29,8 @@ const {data}=useQuery({
     position:"absolute",
       padding:0,
       margin:0, }}>
-        <Box  sx={{mt:10,display:"flex", gap:2}}>
-          <Grid container display={"flex"} alignItems={"center"}>
+        <Box  sx={{mt:10,display:"flex", gap:2, justifyContent:"center"}}>
+          <Grid container display={"flex"} justifyContent={"center"} alignItems={"center"}>
           <Grid>
              <SvgIcon component={AccountCircle} sx={{fontSize:"10rem"}} />
           </Grid>
@@ -42,9 +42,9 @@ const {data}=useQuery({
           </Grid>      
         </Box> 
 
-      <Box display={"flex"} sx={{justifyContent:"space-between", p:3}}>
-      <Card >
-          <CardContent>
+      <Box display={"flex"} sx={{justifyContent:"space-around", p:3}}>
+      <Card sx={{maxWidth:"xl"}} >
+          <CardContent sx={{maxWidth:"md"}}>
           <Grid container gap={2} display={"flex"} flexDirection={"column"} padding={2}>
           <Grid>
             <Typography variant='h5' component="h4" gutterBottom >
@@ -66,15 +66,18 @@ const {data}=useQuery({
             UserName :  {data && data.userName}
           </Typography>
           </Grid>   
-        </Grid>          
-          
-          </CardContent>   
-          <CardActions>:
-            <Button variant="contained" component={Link} to='/updateprofile' sx={{width:"10rem",alignSelf:"center"}}>Update Profile</Button>
-           </CardActions>        
-        </Card> 
-
-        <Changepassword />
+        </Grid>
+        </CardContent> 
+        <CardActions sx={{gap:3, display:"flex", flexDirection:"column"}}>
+        <Button variant="contained" component={Link} to='/updateprofile' fullWidth>
+         Update My profile
+        </Button> 
+        <Button variant="contained" component={Link} to='/updatepassword' fullWidth>
+          Update Password
+        </Button>
+        </CardActions>
+                 
+        </Card>         
       </Box>
         
         
