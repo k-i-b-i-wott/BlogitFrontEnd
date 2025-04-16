@@ -20,7 +20,7 @@ const {isLoading,data,isError,error} =useQuery({
     queryFn: async () => {
       const response = await axios.get(`${apiUrl}/blog/post`,{withCredentials:true})
       console.log(response.data)
-      return response.data
+      return response.data.data
     }
   })
   if(isLoading){
