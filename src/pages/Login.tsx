@@ -9,6 +9,7 @@ import apiUrl  from '../utils/apiUrl'
 
 
 
+
 const Login = () => {
   const [identifier, setIdentifier]=useState("")
   const [password, setPassword]=useState("")
@@ -56,8 +57,23 @@ const {isPending,mutate}=useMutation({
   
   }
   return (
-    <Container maxWidth={"sm"} sx={{mt:4, gap:4}}>
-        <Paper elevation={10} sx={{ mt:12, p:2}}>
+    <Container  sx={{
+      
+      overflow:"hidden",
+      right:0,
+      left:0,
+      position:"absolute",
+      padding:0,
+      margin:0,
+      width: "100%",
+      
+      mt:12
+    }}
+      
+      >
+    <Grid container gap={2} display={"flex"} justifyContent={"center"}>     
+  <Grid>
+  <Paper elevation={10} sx={{  p:2}}>
             <Avatar sx={{
                 mx:"auto",
                 mt:1,
@@ -68,7 +84,7 @@ const {isPending,mutate}=useMutation({
             </Avatar>
             <Typography variant="h5" component="h1" sx={{textAlign:"center", mb:4}} >Sign In</Typography>
 
-          <Box component="form"   onSubmit={handleSubmit} >
+          <Box component="form" maxWidth={"md"}  onSubmit={handleSubmit} >
             {
               error && 
                 ((
@@ -105,13 +121,16 @@ const {isPending,mutate}=useMutation({
             </Button>
           </Box>
 
-          <Grid container sx={{gap:2}}>
+          <Grid container sx={{gap:2}} justifyContent={"center"}  >
             <Grid>
               <Typography>Don't have an account ?</Typography>
             </Grid>
             <Grid component={Link} to="/register">SignUp</Grid>
           </Grid>
         </Paper>
+  </Grid>
+        </Grid>
+        
     </Container>
   )
 }
