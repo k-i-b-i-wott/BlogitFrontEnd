@@ -20,7 +20,7 @@ const {isLoading,data,isError,error} =useQuery({
     queryFn: async () => {
       const response = await axios.get(`${apiUrl}/blog/post`,{withCredentials:true})
       console.log(response.data)
-      return response.data.data
+      return response.data
     }
   })
   if(isLoading){
@@ -42,11 +42,12 @@ const {isLoading,data,isError,error} =useQuery({
     }
   }
    
-if(data && data.length === 0){
-  return <Typography variant='h1' sx={{mt:12}}>
-          No blog found  <Button variant='contained' component={Link} to="/writeblogs"> Create One</Button>
-  </Typography>
-}
+  if(data && data.length === 0){
+    return <Typography variant='h1' sx={{mt:12}}>
+            You ave no blog yet  <Button variant='contained' component={Link} to="/writeblogs"> Create One</Button>
+    </Typography>
+  }
+
 
 const {isPending, mutate}=useMutation({
   mutationKey:["delete-blog"],

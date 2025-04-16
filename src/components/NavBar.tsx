@@ -36,7 +36,7 @@ const NavBar = () => {
         {label:"Home" , path:"/"},
         {label:"Signup" , path:"/register"},
         {label:"SignIn" , path:"/login"},
-        {label: "My Profile", path:`/profile`}
+        // {label: "My Profile", path:`/profile`}
     ]
 
     // if(user){

@@ -5,9 +5,11 @@ import apiUrl  from '../utils/apiUrl'
 
 
 import { useQuery } from "@tanstack/react-query"
+import { Link } from "react-router-dom"
+import Changepassword from "../components/Changepassword"
 
 const MyProfile = () => {
-  // const {userId} = useParams()`
+  
  
 
 const {data}=useQuery({
@@ -40,7 +42,8 @@ const {data}=useQuery({
           </Grid>      
         </Box> 
 
-        <Card >
+      <Box display={"flex"} sx={{justifyContent:"space-between", p:3}}>
+      <Card >
           <CardContent>
           <Grid container gap={2} display={"flex"} flexDirection={"column"} padding={2}>
           <Grid>
@@ -67,11 +70,14 @@ const {data}=useQuery({
           
           </CardContent>   
           <CardActions>:
-            <Button variant="contained" component="a" href="/updateprofile" sx={{width:"10rem",alignSelf:"center"}}>Update Profile</Button>
+            <Button variant="contained" component={Link} to='/updateprofile' sx={{width:"10rem",alignSelf:"center"}}>Update Profile</Button>
            </CardActions>        
         </Card> 
-        
 
+        <Changepassword />
+      </Box>
+        
+        
     </Box>
   )
 }
