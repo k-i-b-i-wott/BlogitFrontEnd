@@ -1,0 +1,149 @@
+[33mcommit fb8a59e7e462f8913b50d5abdf188120473622cd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Wed Apr 16 18:31:31 2025 +0300
+
+    Customized the profile section
+
+[33mcommit 3f454c77694e40d0b9e661b614457a3becf2f869[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Wed Apr 16 16:16:06 2025 +0300
+
+    Added the update password section
+
+[33mcommit c6adaede5b4938116204fd5ee67580b0f0ac29fb[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Wed Apr 16 14:38:17 2025 +0300
+
+    Added the my blogs section
+
+[33mcommit 69f0ffeea5bc097199c8e85a6a242424b4308e64[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Wed Apr 16 14:00:45 2025 +0300
+
+    Solving bugs
+
+[33mcommit bef518bf17276ae5241a2fcfceb8d288b7068bac[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Wed Apr 16 11:06:57 2025 +0300
+
+    Working on fronend responsibility
+
+[33mcommit 376ba048a2a15d125642dec514cc479491ec8049[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Wed Apr 16 10:26:20 2025 +0300
+
+    Added the frontend backend relations
+
+[33mcommit 2e2795203835e7f581ffd23f225cf7a77a749a70[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Wed Apr 16 01:34:48 2025 +0300
+
+    Debugging deployment errors
+
+[33mcommit cfe67ae2fee1c99e31b99a738c7b3b5a2b47b039[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Wed Apr 16 01:31:01 2025 +0300
+
+    Added the profile section
+
+[33mcommit 8d12e7e77dadc1e0402aec106515b147352096f6[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Mon Apr 14 17:34:41 2025 +0300
+
+    Added the urls to the backend
+
+[33mcommit 1ac830714571ce775dbde8eec60364e9571f016a[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Mon Apr 14 16:59:10 2025 +0300
+
+    Added the deployed server
+
+[33mcommit f0c5c0215fa78e660265d2e9f1979ec74b449b35[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Mon Apr 14 12:52:21 2025 +0300
+
+    Hanled the deploymentr bugs
+
+[33mcommit 580f1afab8de6a439ddb0293ba16db7cad974030[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Mon Apr 14 12:42:00 2025 +0300
+
+    Added the zustand for conditional rendering
+
+[33mcommit 6952e1065d7e30fc53524585a72b323ff7bc2288[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Sun Apr 13 22:56:49 2025 +0300
+
+    Completed the delete blog section
+
+[33mcommit cca96215bdd8bd31874aa4428be78ed7aa9f138d[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Sun Apr 13 21:59:58 2025 +0300
+
+    Completed the update blog section
+
+[33mcommit 7af24787e1208edb2c4ebb7960d75c53ac327c47[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Sun Apr 13 15:11:57 2025 +0300
+
+    Added the view blog post page
+
+[33mcommit 471bbcda3c9b3e48a102f6c0b810ed883f574556[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Sun Apr 13 11:37:04 2025 +0300
+
+    Added my blogs page
+
+[33mcommit e19cef3c299529c0dee9c4dbe7e66109c2601be4[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Sun Apr 13 08:20:41 2025 +0300
+
+    Added the read blog section
+
+[33mcommit 37a26215e88dadcb2984e4b1d4e5c1a6717ae9bb[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Sat Apr 12 15:21:22 2025 +0300
+
+    Added the write blog page
+
+[33mcommit c7c49c02e52212e0e39b2ec1dadeceb09e4f3942[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Sat Apr 12 13:18:03 2025 +0300
+
+    Completed the homepage
+
+[33mcommit f75d4b3b460705835041821926d72bc821fb6813[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Sat Apr 12 09:48:29 2025 +0300
+
+    Added the landing page
+
+[33mcommit 97270e400718e58bf4f302754e625055ee9e9ac6[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Fri Apr 11 21:23:20 2025 +0300
+
+    Connected the login page to the backend
+
+[33mcommit b053d86fde689f1c051b48eb2dbd22fd06508521[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Fri Apr 11 18:54:34 2025 +0300
+
+    Connected the signup to the backend
+
+[33mcommit 7e1add38c43f0eef834d9f94271a9a5680470978[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Thu Apr 10 21:56:50 2025 +0300
+
+    Added the login page
+
+[33mcommit 815880f981128d396c3c6eea0c1e2b980a57b2d0[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Thu Apr 10 19:56:57 2025 +0300
+
+    Added the menu items on smaller screens
+
+[33mcommit 21078e210657d6eb441a5761f943207ff1e3b4f7[m
+Author: Kibiwott <bk.kibiwott@gmail.com>
+Date:   Thu Apr 10 15:46:48 2025 +0300
+
+    Initialzed the project

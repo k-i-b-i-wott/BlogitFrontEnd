@@ -1,12 +1,12 @@
 import { AccountCircle } from "@mui/icons-material"
-import { Box, Button, Card, CardActions, CardContent, Grid,SvgIcon, Typography} from "@mui/material"
+import { Box, Button, Grid,SvgIcon, Typography} from "@mui/material"
 import axios from "axios"
 import apiUrl  from '../utils/apiUrl'
 
 
 import { useQuery } from "@tanstack/react-query"
 import { Link } from "react-router-dom"
-import Changepassword from "../components/Changepassword"
+
 
 const MyProfile = () => {
   
