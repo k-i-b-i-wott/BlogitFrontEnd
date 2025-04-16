@@ -14,7 +14,7 @@ const {data}=useQuery({
     queryKey: ["profile"],
     queryFn: async () =>{
      const response =  await axios.get(`${apiUrl}/auth/profile`,{withCredentials:true})
-     
+     console.log(response.data)     
      return response.data.data
     }
   })
