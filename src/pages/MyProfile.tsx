@@ -29,7 +29,7 @@ const {data}=useQuery({
     position:"absolute",
       padding:0,
       margin:0, }}>
-        <Box  sx={{mt:10,display:"flex", gap:2, justifyContent:"center"}}>
+        <Box  sx={{mt:10,display:"flex", gap:2}}>
           <Grid container display={"flex"} justifyContent={"center"} alignItems={"center"}>
           <Grid>
              <SvgIcon component={AccountCircle} sx={{fontSize:"10rem"}} />
@@ -42,42 +42,34 @@ const {data}=useQuery({
           </Grid>      
         </Box> 
 
-      <Box display={"flex"} sx={{justifyContent:"space-around", p:3}}>
-      <Card sx={{maxWidth:"xl"}} >
-          <CardContent sx={{maxWidth:"md"}}>
-          <Grid container gap={2} display={"flex"} flexDirection={"column"} padding={2}>
-          <Grid>
-            <Typography variant='h5' component="h4" gutterBottom >
+      <Box  sx={{maxWidth:"sm", margin:"auto", gap:2, justifyContent:"flex-start"}}>          
+          
+            <Typography variant='h5' component="h4" gutterBottom sx={{m:2}}>
               FirstName :  {data && data.firstName}
             </Typography>  
-          </Grid>  
-          <Grid>
-            <Typography>
+         
+            <Typography sx={{m:2}}>
                LastName :  {data && data.lastName}  
             </Typography>  
-          </Grid>  
-          <Grid>
-          <Typography>
+        
+          <Typography sx={{m:2}}>
             Email :  {data && data.emailAddress}
           </Typography>
-          </Grid>   
-          <Grid>
-          <Typography>
+         
+          <Typography sx={{m:2}}>
             UserName :  {data && data.userName}
           </Typography>
-          </Grid>   
-        </Grid>
-        </CardContent> 
-        <CardActions sx={{gap:3, display:"flex", flexDirection:"column"}}>
-        <Button variant="contained" component={Link} to='/updateprofile' fullWidth>
+         
+        
+        
+        <Button variant="contained" component={Link} to='/updateprofile' fullWidth sx={{m:2}}>
          Update My profile
         </Button> 
-        <Button variant="contained" component={Link} to='/updatepassword' fullWidth>
+        <Button variant="contained" component={Link} to='/updatepassword' fullWidth sx={{m:2}}>
           Update Password
         </Button>
-        </CardActions>
-                 
-        </Card>         
+                        
+              
       </Box>
         
         
