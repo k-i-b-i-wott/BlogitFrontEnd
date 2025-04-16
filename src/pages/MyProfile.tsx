@@ -7,7 +7,7 @@ import apiUrl  from '../utils/apiUrl'
 import { useQuery } from "@tanstack/react-query"
 
 const MyProfile = () => {
-  // const {userId} = useParams()
+  // const {userId} = useParams()`
  
 
 const {data}=useQuery({
