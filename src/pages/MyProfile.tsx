@@ -29,7 +29,7 @@ const {data}=useQuery({
     position:"absolute",
       padding:0,
       margin:0, }}>
-        <Box  sx={{mt:10,display:"flex", gap:2}}>
+        <Box  sx={{mt:10,display:"flex", gap:2}} flexDirection={{lg:"row", sm:"column", xs:"column"}} justifyContent={"center"} maxWidth={"md"}>
           <Grid container display={"flex"} justifyContent={"center"} alignItems={"center"}>
           <Grid>
              <SvgIcon component={AccountCircle} sx={{fontSize:"10rem"}} />
@@ -40,23 +40,23 @@ const {data}=useQuery({
             </Button>
           </Grid>
           </Grid>      
-        </Box> 
+       
 
-      <Box  sx={{maxWidth:"sm", margin:"auto", gap:2, justifyContent:"flex-start"}}>          
+       <Box  sx={{maxWidth:"sm", margin:"auto", gap:2, justifyContent:"flex-start"}}>          
           
             <Typography variant='h5' component="h4" gutterBottom sx={{m:2}}>
               FirstName :  {data && data.firstName}
             </Typography>  
          
-            <Typography sx={{m:2}}>
+            <Typography variant="h5" component={"h4"} gutterBottom sx={{m:2}}>
                LastName :  {data && data.lastName}  
             </Typography>  
         
-          <Typography sx={{m:2}}>
+          <Typography variant="h5" component={"h4"} gutterBottom sx={{m:2}}>
             Email :  {data && data.emailAddress}
           </Typography>
          
-          <Typography sx={{m:2}}>
+          <Typography variant="h5" component={"h4"} gutterBottom sx={{m:2}}>
             UserName :  {data && data.userName}
           </Typography>
          
@@ -68,11 +68,14 @@ const {data}=useQuery({
         <Button variant="contained" component={Link} to='/updatepassword' fullWidth sx={{m:2}}>
           Update Password
         </Button>
+        <Button variant="contained" component={Link} to='/deleteaccount' fullWidth sx={{m:2}} color="error">
+          Delete Account
+        </Button>
                         
               
       </Box>
         
-        
+      </Box> 
     </Box>
   )
 }
