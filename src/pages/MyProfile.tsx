@@ -21,7 +21,7 @@ const MyProfile = () => {
  const {isPending,mutate}= useMutation({
     mutationKey: ["delete profile"],
     mutationFn: async () => {
-      const response =await axios.delete(`${apiUrl}/auth/profile`,{withCredentials:true})
+      const response =await axios.delete(`${apiUrl}/auth/deleteprofile`,{withCredentials:true})
       console.log(response.data)
       return response.data
 
@@ -110,7 +110,7 @@ const {data}=useQuery({
         <Button variant="contained" component={Link} to='/updatepassword' fullWidth sx={{m:2}}>
           Update Password
         </Button>
-        <Button variant="contained" onSubmit={handleClick} type="submit" fullWidth sx={{m:2}} color="error" disabled={isPending}>
+        <Button variant="contained" onClick={handleClick} type="submit" fullWidth sx={{m:2}} color="error" disabled={isPending}>
           {
             isPending ? "Deleting your account": "Delete Account"
           }
