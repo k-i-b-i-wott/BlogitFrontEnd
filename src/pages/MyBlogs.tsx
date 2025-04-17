@@ -107,6 +107,9 @@ return (
                <Button component={Link} to={`/blog/${blog.blogId}`} endIcon={<GoArrowUpRight /> }  sx={{color:"primary.main"}}>
                   More
                 </Button>
+                <Button variant='contained' sx={{bgcolor:"primary.main"}} component={Link} to={`/writeblogs`}>
+                Create new
+              </Button>
               <Button variant='contained' sx={{bgcolor:"primary.main"}} component={Link} to={`/updateblog/${blog.blogId}`}>
                 Update
               </Button>

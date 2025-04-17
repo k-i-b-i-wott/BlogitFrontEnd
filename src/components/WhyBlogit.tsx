@@ -8,7 +8,7 @@ import { IoChatbubblesOutline } from "react-icons/io5";
 
 const WhyBlogit = () => {
   return (
-    <Container sx={{display:"flex",flexWrap:"wrap", gap:1, justifyContent:'space-between'}}>
+    <Container sx={{display:"flex",flexWrap:"wrap", gap:1, justifyContent:'space-between', alignItems:"center"}}>
         <Paper elevation={10} sx={{maxWidth:"15rem"}} >
             <Box component={"div"} sx={{display:"flex", flexDirection:"column",gap:2, padding:2}}>
                 <Avatar
