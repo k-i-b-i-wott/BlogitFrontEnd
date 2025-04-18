@@ -6,7 +6,7 @@ import { MdOutlineStarBorderPurple500 } from "react-icons/md";
 import { IoChatbubbleOutline } from "react-icons/io5";
 import { ReadMore } from '@mui/icons-material';
 import { useQuery } from '@tanstack/react-query';
-import { useState } from 'react';
+
 import axios from 'axios';
 import {format} from 'date-fns'
 import  apiUrl  from '../utils/apiUrl';
@@ -14,18 +14,33 @@ import { Link } from 'react-router-dom';
 
 
 const Blogs = () => {
-    const [error , isError] =  useState();
-   const { isLoading, data}=useQuery({
+   
+   const { isLoading, data, isError, error}=useQuery({
         queryKey:["blogs"],
         queryFn:async()=>{
             const response= await axios.get(`${apiUrl}/blog/latest`,{withCredentials:true})
-            console.log(response.data)
+            
             return response.data.data
-        },
-        
-    
-        
+        },     
     })
+    if(isLoading){
+        return(
+              <Typography>
+                Loading Please wait ...
+              </Typography>  
+        )}
+       if(isError){
+        if(axios.isAxiosError(error)){
+            const errorData = error.response?.data.message
+            return <Typography variant='h1' sx={{mt:12}}>
+              {errorData}
+            </Typography>
+          }else{
+            return <Typography variant='h1' sx={{mt:12}}>
+              An error occurred
+            </Typography>
+          }
+       }
   return (
     <Container
         sx={{
