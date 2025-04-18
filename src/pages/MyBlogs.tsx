@@ -29,25 +29,10 @@ const {isLoading,data,isError,error} =useQuery({
     </Typography>
   }
 
-  if(isError){
-    if(axios.isAxiosError(error)){
-      const errorData = error.response?.data.message
-      return <Typography variant='h1' sx={{mt:12}}>
-        {errorData}
-      </Typography>
-    }else{
-      return <Typography variant='h1' sx={{mt:12}}>
-        An error occurred
-      </Typography>
-    }
-  }
-   
-  if(data && data.length === 0){
-    return <Typography variant='h1' sx={{mt:12}}>
-            You ave no blog yet  <Button variant='contained' component={Link} to="/writeblogs"> Create One</Button>
-    </Typography>
-  }
 
+   
+ 
+  
 
 const {isPending, mutate}=useMutation({
   mutationKey:["delete-blog"],
@@ -66,11 +51,35 @@ const handleDelete=(blogId: String, e: React.MouseEvent <HTMLButtonElement>)=>{
   e.preventDefault()
   mutate(blogId)
 }
+if(isError){
+  if(axios.isAxiosError(error)){
+    const errorData = error.response?.data.message
+    return <Typography variant='h1' sx={{mt:12}}>
+      {errorData}
+    </Typography>
+  }else{
+    return <Typography variant='h1' sx={{mt:12}}>
+      An error occurred
+    </Typography>
+  }
+}
+if (data && data.length === 0) {
+  return (
+    <Box sx={{ mt: 10, textAlign: "center" }}>
+      <Typography variant="h4" gutterBottom>
+        You have no blog yet
+      </Typography>
+      <Button variant="contained" component={Link} to="/writeblogs">
+        Create One
+      </Button>
+    </Box>
+  );
+}
 
 return (
     <Box sx={{mt:12, display:"flex", gap:3, justifyContent:"center", flexDirection:"column"}}>
-     
-        {
+
+ {
          data && data.map((blog:any)=>{
             return(
         <Card  key={blog.blogId} sx={{maxWidth:"md", height:"fit-content", justifyContent:"center", mb:2}}>
