@@ -14,26 +14,36 @@ import MyProfile from "./pages/MyProfile"
 import UpdateProfile from "./components/UpdateProfile"
 import Changepassword from "./components/Changepassword"
 
+
 const App = () => {
   return (
-    <Container>
-      <NavBar />
-    <Routes>
-    <Route path="/"   element={<Home />} />
-    <Route path="/register"   element={<SignUp />}/>
-    <Route path="/login"  element={<Login />}/>
-    <Route path="/blogs"  element= {<Protected><Blogs /></Protected>}/>
-     
-    <Route path="/writeblogs"   element={<Protected><WriteBlog /></Protected>}/>
-    <Route path="/blog/:blogId"   element={<Protected><BlogEntry /></Protected>}/>
-    <Route path="/myblogs"  element={<Protected><MyBlogs /></Protected>}/>
-    <Route path="/updateblog/:blogId" element={<UpdateBlog />}/>
-    <Route path ="/profile" element={<Protected><MyProfile /></Protected>}/>
-    <Route path="/updateprofile" element={<Protected><UpdateProfile  /></Protected>}/>
-    <Route path="/updatepassword" element={<Protected><Changepassword /></Protected>}/>
-
-    </Routes>
-    </Container>
+   <div
+   style={{
+    minHeight:"100vh",
+    display:"flex",
+    flexDirection:"column"
+   }}
+   
+   >
+    <NavBar />
+     <Container sx={{flexGrow:1}}>      
+          <Routes>
+          <Route path="/"   element={<Home />} />
+          <Route path="/register"   element={<SignUp />}/>
+          <Route path="/login"  element={<Login />}/>
+          <Route path="/blogs"  element= {<Protected><Blogs /></Protected>}/>
+          
+          <Route path="/writeblogs"   element={<Protected><WriteBlog /></Protected>}/>
+          <Route path="/blog/:blogId"   element={<Protected><BlogEntry /></Protected>}/>
+          <Route path="/myblogs"  element={<Protected><MyBlogs /></Protected>}/>
+          <Route path="/updateblog/:blogId" element={<UpdateBlog />}/>
+          <Route path ="/profile" element={<Protected><MyProfile /></Protected>}/>
+          <Route path="/updateprofile" element={<Protected><UpdateProfile  /></Protected>}/>
+          <Route path="/updatepassword" element={<Protected><Changepassword /></Protected>}/>
+          </Routes>   
+  </Container>
+    
+   </div>
    
   )
 }

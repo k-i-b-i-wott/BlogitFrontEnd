@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   return (
-    <Box maxWidth="xl" flexDirection={ {lg:"row", sm:"column", xs:"column"}   } gap={2} display={"flex"}   sx={{mt:12,mb:4,mx:2}}>
+    <Box maxWidth="xl" flexDirection={ {lg:"row", sm:"column", xs:"column"}   } gap={2} display={"flex"}   sx={{mt:10,mb:4,mx:2}}>
         <Stack direction="column" >
             <Box >
                 <Typography variant='h2' component="h4" gutterBottom >
